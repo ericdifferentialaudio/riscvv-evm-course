@@ -1,0 +1,68 @@
+# Simulation outputs
+*.vcd
+*.fsdb
+*.wlf
+*.log
+*.vpd
+*.shm/
+*.trn
+*.dsn
+work/
+simv*
+csrc/
+DVEfiles/
+ucli.key
+*.key
+
+# Waveform databases
+*.fst
+*.vcd.gz
+*.vpd.gz
+
+# Coverage
+*.cov
+urgReport/
+covhtmlreport/
+
+# Build artifacts
+*.o
+*.so
+*.a
+*.exe
+*.out
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+venv/
+*.egg-info/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Vivado
+*.jou
+*.str
+*.zip
+.Xil/
+vivado*.backup*
+
+# Solution files (for instructor use only)
+# Uncomment to hide solutions from students:
+# **/solution/
