@@ -1,0 +1,33 @@
+
+EVM next steps - plan.
+
+1) I want you to do a critical analysis of UVM vs EVM.  EVM is a lightweight verification methodology
+- read all files in UVM, and create a summary of UVM functions and tasks, and generate a high level overview that you understand of its interconnected objects and components.
+- read all files in EVM, as well as all of the .md files we've created to describe EVM
+- generate a critical analysis of the differences, and identify must have features that need to be added to EVM to make it applicable to IP verification in either FPGA or ASIC environments
+- generate a todo list of features to add to EVM to make it almost as strong as UVM, but staying lightweight.
+- we have features for streaming ADC and DACs, but I'd like to focus on ASIC IP development.
+
+2) EVM - E stands for embedded.  E also stands for Eric, but don't share that.  Any other suggestions for E words?
+- There is UVM, and OVM, both start with vowels.  I think EVM is a great acronym, and I like embedded, but happy to hear suggestions.
+
+3) Create all documentation, especially start session and end session code.  
+- Review all documenation, and cleanup all.  amalgomate into fewer and more information heavy documents.  reduce redundancy.
+
+4) Focus on the example project.  This is a big task.
+- I'd suggest a simple DUT.  We can make a simple TX NIC: pull data, transmit into ethernet stream with SOP/EOP signalling.
+- On the input side, we have an AXI Master, and AXI Slave
+-- Input AXI Slave is to receive doorbells:  address of packet in host, size of packet
+-- Input AXI Master is to pull data from doorbell descriptors.  
+- pulled data will land in a memory (or FIFO).  Make it store and forward.  So pull all data, and then once done transmit.
+- Output side will have simple backpressure.  Don't send data if backpressure is asserted
+- Output side can be AXI, or a dedicated streaming interface, with SOP,EOP,VALID, DATA. With backpressure input
+- Plan the DUT, the interface protocols (doorbell accesses) and streaming output interface
+- Plan the CSRs required (doorbells), and generate the CSRs using the script we have created.
+- Implement the DUT using the CSR RTL output, implement a memory, and state machine logic to fetch data following doorbell, store into memory, and after full transfer (store and forward), transmit out over streaming output
+- Implement a DV environment starting with testbench around the DUT.
+- Implement interfaces into the tb_top that connect to the DUT
+- Implement a base test using EVM that creates an env, cfg (including RAL from the script)
+- testbench and DUT must also include a clk and synchronous rst.  Make sure those are connected and generated.
+
+5) Any other suggestions for this bench or questions?

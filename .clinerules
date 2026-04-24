@@ -1,0 +1,48 @@
+# .clinerules — Cline Session Rules
+# Workspace: c:\evm
+
+## Session Start
+
+At the start of every session, read the following files in order:
+1. `CLAUDE.md` — root workspace orientation (project overview, EVM rules, key differences)
+2. `evm-sv/CLAUDE.md` — deep EVM reference (all classes, methods, tasks, coding patterns)
+3. `CLAUDE_UVM.md` — deep UVM reference (UVM architecture, all major classes, macros)
+
+Do not skip these files. All three are required context for all work in this workspace.
+
+---
+
+## Documentation Update Rule
+
+**Any change made to the evm-sv project MUST be reflected in `evm-sv/CLAUDE.md`.**
+
+This includes but is not limited to:
+- New classes, tasks, functions, or methods added to any `.sv` file
+- Changes to existing API signatures or behavior
+- New coding patterns or conventions introduced
+- New protocol agents or vkit components added
+- Changes to the register model, TLM, or sequencer infrastructure
+- Any new macros or plusarg options
+
+`evm-sv/CLAUDE.md` is the authoritative reference for the EVM framework. It must stay in sync with the actual source code at all times.
+
+---
+
+## File Header API Summary Rule
+
+**Every `.sv` file in `evm-sv/` MUST include an `API:` section in its file header block.**
+
+This section lists all public functions, tasks, and classes defined in that file — one line each with a brief description. Update this section whenever functions or tasks are added or changed.
+
+Format:
+```
+// API — Public Interface:
+//   ClassName.method_name(args)  — brief description
+//   static_fn(args)              — brief description
+```
+
+Rules:
+- Apply to any `.sv` file you create or modify in `evm-sv/`
+- You do NOT need to retroactively update all files at once — update each file as it is next touched
+- The two files most recently modified (`evm_report_handler.sv`, `evm_log.sv`) must be updated in the current session
+- Mark P0.3 additions with `[P0.3]`, future additions with their tag (e.g., `[P0.1]`, `[P1.1]`)

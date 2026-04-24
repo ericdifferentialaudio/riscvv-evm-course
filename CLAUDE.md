@@ -2,7 +2,7 @@
 # Workspace: c:\evm
 
 **Last Updated:** 2026-04-23  
-**Purpose:** Read this file at the start of every session to orient yourself.
+**Purpose:** Read this file at the start of every session to orient yourself. Then read ALL reference files listed below.
 
 ---
 
@@ -24,8 +24,11 @@ This workspace (`c:\evm`) contains **three projects**:
 |------|----------------|
 | `evm-sv/CLAUDE.md` | **Deep EVM reference** — every class, method, task, coding pattern |
 | `CLAUDE_UVM.md` | **Deep UVM reference** — UVM architecture, all major classes, macros |
+| `EVM_ROADMAP.md` | **Industry adoption roadmap** — P0/P1/P2/P3 features with API designs, effort, and status |
 
-**Session start pattern:** Read this file first, then read `evm-sv/CLAUDE.md` if working on EVM, or `CLAUDE_UVM.md` if comparing to UVM.
+**Session start pattern:** Read this file first, then **always** read both `evm-sv/CLAUDE.md` AND `CLAUDE_UVM.md` — all three files are required at every session start.
+
+**Before implementing any new EVM feature:** Check `EVM_ROADMAP.md` for the agreed API design, file locations, and Vivado compatibility rules. Update the Status column when a feature is complete.
 
 ---
 
