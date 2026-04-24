@@ -16,6 +16,7 @@
 | P0.1 — CRV infrastructure (rand items + seed) | 2026-04-24 | `evm_sequence_item.sv`, `evm_rand_sequence.sv` (new), `evm_cmdline.sv`, `evm_pkg.sv` |
 | P0.2 — Functional coverage base class + reporting | 2026-04-24 | `evm_coverage.sv`, `evm_base_test.sv`, `python/evm_cov_merge.py` (new) |
 | P1.1 — SPI agent (initiator + target + device models) | 2026-04-24 | `evm_spi_agent/` (9 new files), `evm_vkit_pkg.sv` |
+| P1.2 — I2C agent (initiator + target + register models) | 2026-04-24 | `evm_i2c_agent/` (9 new files), `evm_vkit_pkg.sv` |
 
 ---
 
@@ -23,7 +24,6 @@
 
 | Priority | Feature | Effort | Impact |
 |----------|---------|--------|--------|
-| 🟡 P1 | I2C agent | Medium | High |
 | 🟡 P1 | UART agent | Low | High |
 | 🟡 P1 | APB agent | Medium | High |
 | 🟡 P1 | Backdoor / HDL force-release | Low-Medium | High |
