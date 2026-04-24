@@ -62,20 +62,23 @@ Over 12-15 weeks, you'll progressively build a complete RISC-V processor while l
 
 1. **Clone this repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ericdifferentialaudio/riscvv-evm-course.git
    cd riscv-evm-course
    ```
 
-2. **Initialize EVM submodule:**
+2. **Clone EVM framework (separate repository):**
    ```bash
-   git submodule init
-   git submodule update
-   ```
-
-3. **Verify setup:**
-   ```bash
+   cd ..
+   git clone https://github.com/YOUR_USERNAME/evm-sv.git
    cd evm-sv/vkit/src
    ./compile_check.sh  # Checks if EVM compiles with your simulator
+   ```
+
+3. **Recommended directory structure:**
+   ```
+   your-workspace/
+   ├── evm-sv/              # EVM framework (separate repo)
+   └── riscv-evm-course/    # This course (separate repo)
    ```
 
 ### Directory Structure
@@ -85,8 +88,6 @@ riscv-evm-course/
 ├── README.md              # This file
 ├── LICENSE                # Course license
 ├── .gitignore            
-│
-├── evm-sv/               # EVM framework (git submodule)
 │
 ├── lectures/             # Weekly lecture materials
 │   ├── week01_intro/
