@@ -37,7 +37,7 @@ This workspace (`c:\evm`) contains **three projects**:
 ### evm-sv — Embedded Verification Methodology
 - **Goal:** 100% of UVM's critical features at 10% of UVM's complexity
 - **Target:** Embedded systems (FPGA, microcontroller DUTs), not ASIC-scale
-- **Status:** Production-ready. All core features complete.
+- **Version:** 0.1.0 — Experimental — subject to change without notice
 - **Key innovation:** No config_db (direct VIF), Quiescence Counter (evm_qc), 3-phase reset, built-in test/sequence registries
 - **Language:** SystemVerilog (.sv), MIT License
 - **Entry point:** `evm-sv/vkit/src/evm_pkg.sv` (core), `evm-sv/vkit/evm_vkit/evm_vkit_pkg.sv` (protocol agents)
